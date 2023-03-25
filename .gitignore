@@ -1,0 +1,8 @@
+/node_modules/
+/public/build/
+*.7z
+*.zip
+.DS_Store
+hanziyin.js
+
+index (2).html
