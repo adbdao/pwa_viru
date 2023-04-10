@@ -36,8 +36,8 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
     <META name=description content="農曆國曆對照表,Gregorian Solar Calendar and Chinese Lunar Calendar">
     <META content="text/html; charset=utf-8" http-equiv=Content-Type>
     
-    <link rel="icon" href="./icons/virucana48.png" />
-    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" href="/icons/virucana48.png" />
+    <link rel="manifest" href="/manifest.json" />
 
     <SCRIPT language=Javascript>
         // <!--我修改-->
@@ -1033,8 +1033,8 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                     else //顯示農曆日
                         lObj.innerHTML = cDay(mylD);
                     // 顯示初一十五
-                    if (mylD == 1) { lObj.innerHTML += '<font' + ' ' + 'style="font-size:12pt;background:#adf;color:royalblue;">午供</font>'; }
-                    if (mylD == 15) { lObj.innerHTML += '<font' + ' ' + 'style="font-size:12pt;background:#adf;color:royalblue;">午供</font>'; }
+                    if (mylD == 1) { lObj.innerHTML += '<font' + ' ' + 'style="font-size:24pt;background:#adf;color:royalblue;">午供</font>'; }
+                    if (mylD == 15) { lObj.innerHTML += '<font' + ' ' + 'style="font-size:24pt;background:#adf;color:royalblue;">午供</font>'; }
                     // 顯示六齋日
                     myBr = givecolor('六齋', 'green', 'orange', '<br/>').big()
                     myBr1 = givecolor('六齋', 'green', 'orange', '<br/>').big() + givebrcolor('誦戒', 'magenta').big()
@@ -1171,13 +1171,13 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                     festival = '';
                 else
                     festival = '<TABLE WIDTH=100% BORDER=0 CELLPADDING=2 CELLSPACING=0 BGCOLOR="#CCFFCC"><TR><TD>' +
-                        '<FONT COLOR="#000000" STYLE="font-size:9pt;">' + cld[d].lunarFestival + ' ' + cld[d].solarFestival + ' ' + cld[d].solarTerms + ' ' + spcday + '</FONT></TD>' +
+                        '<FONT COLOR="#000000" STYLE="font-size:18pt;">' + cld[d].lunarFestival + ' ' + cld[d].solarFestival + ' ' + cld[d].solarTerms + ' ' + spcday + '</FONT></TD>' +
                         '</TR></TABLE>';
 
 
 
                 s = '<TABLE WIDTH="130" BORDER=0 CELLPADDING="2" CELLSPACING=0 BGCOLOR="#000066" style="opacity:0.8; -moz-opacity:0.8; filter:Alpha(opacity=80)"><TR><TD>' +
-                    '<TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD ALIGN="right"><FONT COLOR="#ffffff" STYLE="font-size:9pt;">' +
+                    '<TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD ALIGN="right"><FONT COLOR="#ffffff" STYLE="font-size:18pt;">' +
                     cld[d].sYear + ' 年 ' + cld[d].sMonth + ' 月 ' + cld[d].sDay + ' 日<br/>星期' + cld[d].week + '<br/>' +
                     '<font color="violet">農曆' + (cld[d].isLeap ? '閏 ' : ' ') + cld[d].lMonth + ' 月 ' + cld[d].lDay + ' 日</font><br/>' +
                     '<font color="yellow">' + cld[d].cYear + '年 ' + cld[d].cMonth + '月 ' + cld[d].cDay + '日</font>' +
@@ -1406,7 +1406,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             getGlobeTime();
 
             //地圖位移
-            document.getElementById("City").innerHTML = (isDS == true ? "<SPAN STYLE='font-size:12pt;font-family:Wingdings; color:Red;'><font face='Wingdings'>R</font></span> " : '') + objTimeZone[2]; //首都
+            document.getElementById("City").innerHTML = (isDS == true ? "<SPAN STYLE='font-size:24pt;font-family:Wingdings; color:Red;'><font face='Wingdings'>R</font></span> " : '') + objTimeZone[2]; //首都
             var pos = Math.floor(objTimeZone[0].substr(0, 3));
             if (pos < 0) pos += 24;
             pos *= -10;
@@ -1502,6 +1502,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
 
         html {
             background: olive;
+            font-size:2em
         }
 
         .todayColor {
@@ -1517,23 +1518,23 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
         }
 
         .font-blue {
-            font-size: 16px;
+            font-size: 32px;
             color: #0000FF;
         }
 
         button {
-            FONT-SIZE: 8pt;
+            FONT-SIZE: 16pt;
         }
 
         #GX {
-            font-size: 10pt;
+            font-size:20pt;
             color: #fff;
             font-weight: bold;
         }
 
         #showCalendar,
         #jt {
-            font-size: 12pt;
+            font-size: 24pt;
             background: #adf;
             color: #030;
         }
@@ -1633,7 +1634,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
       style="FONT-FAMILY: 'Arial Black'; COLOR: #f0f0f0; FONT-SIZE: 100pt" 
       id=YMBG>&nbsp;0000<br/>&nbsp;JUN</FONT> </DIV>
 -->
-<input id="addPWA" type="button" value="安裝成APP" title="iPhone請使用「加到主頁面」" style="position: absolute;margin: 10px 10px;"/>
+<input id="addPWA" type="button" value="安裝成APP" title="iPhone請使用「加到主頁面」" style="position: absolute;margin: 10px 10px;" disabled="disabled"/>
         <TABLE bordercolor="silver" padding="0" border=3 cellpadding="0" cellspacing="0" id="tab1" style="width: 100%;" >
             <tr>
                 <td bgColor=#b80 colSpan=7 align=right>
@@ -1642,15 +1643,15 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             </tr>
             <TR>
                 <TD bgColor=orange colSpan=7 align=right>
-                    <FONT style="FONT-SIZE: 10pt" color=#000 size=2>
+                    <FONT style="font-size:20pt" color=#000 size=2>
                         西元
-                        <SELECT style="FONT-SIZE: 9pt" onchange=changeCld() name=SY>
+                        <SELECT style="font-size:18pt" onchange=changeCld() name=SY>
                             <SCRIPT language=Javascript>
                                 // <!--我修改
                                 for (i = 1900; i < 2101; i++) document.write('<option>' + i)
           //--></SCRIPT>
                         </SELECT>年
-                        <SELECT style="FONT-SIZE: 9pt" onchange=changeCld() name=SM>
+                        <SELECT style="font-size:18pt" onchange=changeCld() name=SM>
                             <SCRIPT language=JavaScript>
                                 // <!--我修改
                                 for (i = 1; i < 13; i++) document.write('<option>' + i)
@@ -1672,13 +1673,13 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
       </tr>
 -->
             <tr colSpan=7 align=middle style="width: calc(100% / 7);" bgcolor="#ff8">
-                <td style="FONT-SIZE: 9pt">滑鼠<br />點擊→</td>
-                <td style="FONT-SIZE: 9pt" onmousedown="pushBtm('YU')">上一年▲</td>
-                <td style="FONT-SIZE: 9pt" onmousedown="pushBtm('YD')">下一年▼</td>
-                <td style="FONT-SIZE: 9pt" onmousedown="pushBtm('MU')">上一月▲</td>
-                <td style="FONT-SIZE: 9pt" onmousedown="pushBtm('MD')">下一月▼</td>
-                <td style="FONT-SIZE: 9pt" onmousedown="pushBtm('')">回今日</td>
-                <td style="FONT-SIZE: 9pt" onmousedown="javascript:window.location.reload()">重新載入</td>
+                <td style="font-size:18pt">滑鼠<br />點擊→</td>
+                <td style="font-size:18pt" onmousedown="pushBtm('YU')">上一年▲</td>
+                <td style="font-size:18pt" onmousedown="pushBtm('YD')">下一年▼</td>
+                <td style="font-size:18pt" onmousedown="pushBtm('MU')">上一月▲</td>
+                <td style="font-size:18pt" onmousedown="pushBtm('MD')">下一月▼</td>
+                <td style="font-size:18pt" onmousedown="pushBtm('')">回今日</td>
+                <td style="font-size:18pt" onmousedown="javascript:window.location.reload()">重新載入</td>
             </tr>
             <TR>
                 <TD id="mySD" align=middle bgColor='gold' colSpan=7></TD>
@@ -1727,7 +1728,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                             if (i % 2 == 1) document.write(' color=' + color2)
                             else document.write(' color=' + color1)
                         }
-                        document.write(' TITLE=""> </font><br/><font id="LD' + gNum + '" size=2 style="font-size:9pt"> </font></td>')
+                        document.write(' TITLE=""> </font><br/><font id="LD' + gNum + '" size=2 style="font-size:18pt"> </font></td>')
                     }
                     document.write('</tr>')
                 }
@@ -1742,12 +1743,12 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             <FORM name=WorldClock>
                 <TD vAlign=top width=240 align=left>
                     <!--為了手機版靠左-->
-                    <FONT style="FONT-SIZE: 9pt" size=2>本地時間</FONT><br />
-                    <SPAN style="FONT-FAMILY: Arial; COLOR: #000080; FONT-SIZE: 11pt" id=LocalTime>0000年0月0日 (　) 　午
+                    <FONT style="font-size:18pt" size=2>本地時間</FONT><br />
+                    <SPAN style="FONT-FAMILY: Arial; COLOR: #000080; font-size:22pt" id=LocalTime>0000年0月0日 (　) 　午
                         00:00:00</SPAN>
                     <P>
-                        <SPAN style="WIDTH: 150px; FONT-FAMILY: '新細明體'; FONT-SIZE: 9pt" id=City>台灣</SPAN> <br />
-                        <SPAN style="FONT-FAMILY: Arial; COLOR: #000080; FONT-SIZE: 11pt" id=GlobeTime>0000年0月0日 (　) 　午
+                        <SPAN style="WIDTH: 150px; FONT-FAMILY: '新細明體'; font-size:18pt" id=City>台灣</SPAN> <br />
+                        <SPAN style="FONT-FAMILY: Arial; COLOR: #000080; font-size:22pt" id=GlobeTime>0000年0月0日 (　) 　午
                             00:00:00</SPAN><br />
 
                     <TABLE>
@@ -1829,13 +1830,13 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             var savedPrompt
 
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('sw_my.js')
+                navigator.serviceWorker.register('/sw_my.js')
                     .then(function (registration) {
                         console.log('ServiceWorker registration successful with scope:', registration.scope)
-                        // alert('安裝成功')
+                        alert('安裝成功')
                     }).catch(function (err) {
                         console.log('ServiceWorker registration failed:', err)
-                        // alert('安裝失敗，請重新安裝')
+                        alert('安裝失敗，請重新安裝')
                     })
             }
 
@@ -1853,10 +1854,10 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                     savedPrompt.userChoice.then(function (result) {
 
                         if (result.outcome == 'dismissed') {
-                            //   alert('使用者關閉主營幕')
+                              alert('使用者關閉主營幕')
                             console.log('User dismissed homescreen install')
                         } else {
-                            // alert('使用者加入主營幕')
+                            alert('使用者加入主營幕')
                             console.log('User added to homescreen')
                         }
                         savedPrompt = null
