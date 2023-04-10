@@ -1,4 +1,6 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE HTML>
+
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> -->
 <!-- saved from url=(0048)http://s.o4u.com/host/blog/calendar/calendar.htm -->
 <!--
         ***************************************
@@ -24,101 +26,19 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                           尊重他人創作‧請勿刪除或變更此說明
 
 -->
-<!--
-2018年依原碼修改後，對其它佛學院的指導教學：
-
-您要的行事曆即是：
-「農曆台灣月曆-手機4六個月的月曆.html」
-檔案，以Google 的Chrome瀏覽器打開，才可見到最佳效果！
- 
-我是複製到excel中再美化一翻！
- 
-可自己編輯，方法如下：
-在
-「農曆台灣月曆-手機4六個月的月曆.html」上按右鑑，以純文字軟體打開：
-筆記本、MadEdit.exe、我是用Visual Studio Code…
-https://imagine.microsoft.com/zh-tw/Catalog/Product/104
- 
-至第76行，
-'0101 元旦',
-'0228 和平紀念日',
-前四位數字，即可自行修改你要的「國曆日期」，後面修改為你要的事項！但中間要是一空隔號！
- 
-第93行，
-'0109 寒假第一批結束',
-'0110 寒假第二批開始',
-前四位數字，即可自行修改你要的「農曆日期」，後面修改為你要的事項！但中間要是一空隔號！
- 
-但！最後一行，不要末尾的(英文)逗號！！
-'0928 教師節',
-'1010 國慶日'
-或
-'1215 出功德衣',
-'1208 臘八節'
- 
-第843行以後，是可以程式碼編的日期！
-比較複雜！
-<font color="royalblue"'+' '+'size=3>午供</font>
-"royalblue"是顏色，可自行修改，改為英文的顏色：red , yellow都可以
- 
-第898行
-        myBr=givecolor('六齋','cyan')
-        myBr1=givecolor('六齋','cyan')+givebrcolor('誦戒','magenta').big()
-         if(mylD==8){lObj.innerHTML+=myBr;}
-         if(mylD==14){lObj.innerHTML+=myBr1;gObj.style.background='pink'}
- 此為初八初十四，可以加入「六齋」或自行改為需要的事情事項！
-'cyan'是青色，可改為英文的顏色：red , yellow都可以
-也可用#00ff00等#+紅+綠+藍
-的html語法
- 
-第904行
-if(monthDays(cld[sD].lYear,cld[sD].lMonth)==28){
-         if(monthDays(cld[sD].lYear,cld[sD].lMonth)==31){
-這語法表示：如果月底是28天…31天…
-可自行修改…
- 
-第921行
-            if (12==(cld[sD].lMonth)){    //判斷是否為除夕
-這語法表示：12月的月底！
-                if (eve==(mylD)){lObj.innerHTML+=givebrcolor('除夕,寒假第一批開始','brown');}
-                if ((eve-1)==(mylD)){lObj.innerHTML+=givebrcolor('普茶,圍爐','brown');}
-                if ((eve-2)==(mylD)){lObj.innerHTML+=givebrcolor('大掃除','brown');}
-「eve-1 」「eve-2」表示除夕前一天，前二天…
-可以加入「普茶,圍爐」或自行改為需要的事情事項！
- 
-Javascript教學影片：
-https://www.youtube.com/watch?v=ek4z6uVulKQ&list=PLi5orj2TlTGwfZfZFhxDrYzhUy_dGmw6v
-我看2月即可編寫！
- 
-舊行事曆如附
-若你們在excel編輯新行事曆，
-不必急著調整行距或儲存格的大小以符合A4大小，
-先調整顏色、字體、邊框…
-最後列印時，再從列印設定中「將所有列放入一頁中」
-即可全部壓縮為適合A4大小的尺寸
-我覺得這樣會美觀、省事很多！
-
-又，若要編輯「農曆台灣月曆-手機4六個月的月曆.html」原始檔，記得編寫後要存檔，再以瀏覽器重新開啟！
-這個程式語言是Javascript
-
-阿彌陀佛！
-祝 法安 
-南普陀寺教務助理 道中 謹上
--->
 <HTML lang="en" translate="no">
 
 <HEAD>
     <TITLE>毘盧佛月曆</TITLE>
-    <link rel="icon" href="/icons/virucana48.png" />
-    <link rel="manifest" href="/manifest.json" />
-
     <META name=keywords
         content="農曆國曆對照表,時間;世界時間;時區;農曆;陰曆;陽曆;月曆;曆法;節日;紀念日;時區;節氣;二十四節氣;干支;生肖;world time clock;gregorian solar;Chinese lunar;calendar">
     <META name=robots content=All>
     <META name=description content="農曆國曆對照表,Gregorian Solar Calendar and Chinese Lunar Calendar">
     <META content="text/html; charset=utf-8" http-equiv=Content-Type>
+    
+    <link rel="icon" href="./icons/virucana48.png" />
+    <link rel="manifest" href="./manifest.json" />
 
-	<script src="sw_my.js"></script>
     <SCRIPT language=Javascript>
         // <!--我修改-->
         /*****************************************************************************
@@ -1903,6 +1823,49 @@ https://www.youtube.com/watch?v=ek4z6uVulKQ&list=PLi5orj2TlTGwfZfZFhxDrYzhUy_dGm
 一上二人現住
 </textarea>
     </div>
+    <script>
+        window.addEventListener('load', function () {
+            var btnSave = document.getElementById('addPWA')
+            var savedPrompt
+
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('sw_my.js')
+                    .then(function (registration) {
+                        console.log('ServiceWorker registration successful with scope:', registration.scope)
+                        // alert('安裝成功')
+                    }).catch(function (err) {
+                        console.log('ServiceWorker registration failed:', err)
+                        // alert('安裝失敗，請重新安裝')
+                    })
+            }
+
+            window.addEventListener('beforeinstallprompt', function (e) {
+                e.preventDefault()
+                btnSave.removeAttribute('disabled')
+                savedPrompt = e
+                return false
+            })
+
+            btnSave.addEventListener('click', function () {
+                if (savedPrompt !== undefined) {
+                    savedPrompt.prompt()
+
+                    savedPrompt.userChoice.then(function (result) {
+
+                        if (result.outcome == 'dismissed') {
+                            //   alert('使用者關閉主營幕')
+                            console.log('User dismissed homescreen install')
+                        } else {
+                            // alert('使用者加入主營幕')
+                            console.log('User added to homescreen')
+                        }
+                        savedPrompt = null
+                    })
+                }
+            })
+
+        })
+    </script>
 </BODY>
 
 </HTML>
