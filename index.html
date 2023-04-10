@@ -109,8 +109,8 @@ https://www.youtube.com/watch?v=ek4z6uVulKQ&list=PLi5orj2TlTGwfZfZFhxDrYzhUy_dGm
 
 <HEAD>
     <TITLE>毘盧佛月曆</TITLE>
-    <link rel="icon" href="icons/virucana_48.png" />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="/icons/virucana48.png" />
+    <link rel="manifest" href="/manifest.json" />
 
     <META name=keywords
         content="農曆國曆對照表,時間;世界時間;時區;農曆;陰曆;陽曆;月曆;曆法;節日;紀念日;時區;節氣;二十四節氣;干支;生肖;world time clock;gregorian solar;Chinese lunar;calendar">
@@ -118,9 +118,7 @@ https://www.youtube.com/watch?v=ek4z6uVulKQ&list=PLi5orj2TlTGwfZfZFhxDrYzhUy_dGm
     <META name=description content="農曆國曆對照表,Gregorian Solar Calendar and Chinese Lunar Calendar">
     <META content="text/html; charset=utf-8" http-equiv=Content-Type>
 
-    <!-- <SCRIPT language=Javascript>
-
-    </SCRIPT> -->
+	<script src="sw_my.js"></script>
     <SCRIPT language=Javascript>
         // <!--我修改-->
         /*****************************************************************************
@@ -1715,7 +1713,8 @@ https://www.youtube.com/watch?v=ek4z6uVulKQ&list=PLi5orj2TlTGwfZfZFhxDrYzhUy_dGm
       style="FONT-FAMILY: 'Arial Black'; COLOR: #f0f0f0; FONT-SIZE: 100pt" 
       id=YMBG>&nbsp;0000<br/>&nbsp;JUN</FONT> </DIV>
 -->
-        <TABLE bordercolor="silver" padding="0" border=3 cellpadding="0" cellspacing="0" id="tab1">
+<input id="addPWA" type="button" value="安裝成APP" title="iPhone請使用「加到主頁面」" style="position: absolute;margin: 10px 10px;"/>
+        <TABLE bordercolor="silver" padding="0" border=3 cellpadding="0" cellspacing="0" id="tab1" style="width: 100%;" >
             <tr>
                 <td bgColor=#b80 colSpan=7 align=right>
                     <FONT id=GX></FONT><br />
@@ -1752,7 +1751,7 @@ https://www.youtube.com/watch?v=ek4z6uVulKQ&list=PLi5orj2TlTGwfZfZFhxDrYzhUy_dGm
         </td>
       </tr>
 -->
-            <tr colSpan=7 align=middle width=40 bgcolor="#ff8">
+            <tr colSpan=7 align=middle style="width: calc(100% / 7);" bgcolor="#ff8">
                 <td style="FONT-SIZE: 9pt">滑鼠<br />點擊→</td>
                 <td style="FONT-SIZE: 9pt" onmousedown="pushBtm('YU')">上一年▲</td>
                 <td style="FONT-SIZE: 9pt" onmousedown="pushBtm('YD')">下一年▼</td>
@@ -1766,13 +1765,13 @@ https://www.youtube.com/watch?v=ek4z6uVulKQ&list=PLi5orj2TlTGwfZfZFhxDrYzhUy_dGm
             </TR>
 
             <TR align=middle bgColor=#e0e0e0>
-                <TD width=99>日</TD>
-                <TD width=99>一</TD>
-                <TD width=99>二</TD>
-                <TD width=99>三</TD>
-                <TD width=99>四</TD>
-                <TD width=99>五</TD>
-                <TD width=99>六</TD>
+                <TD style="width: calc(100% / 7);" >日</TD>
+                <TD style="width: calc(100% / 7);" >一</TD>
+                <TD style="width: calc(100% / 7);" >二</TD>
+                <TD style="width: calc(100% / 7);" >三</TD>
+                <TD style="width: calc(100% / 7);" >四</TD>
+                <TD style="width: calc(100% / 7);" >五</TD>
+                <TD style="width: calc(100% / 7);" >六</TD>
             </TR>
             <SCRIPT language=JavaScript>
                 // <!--我修改
