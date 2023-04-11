@@ -1,30 +1,42 @@
-const cacheName = 'cache';
+// 引用workbox build
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
-self.addEventListener('install', (e) => {
-    console.log('[Service Worker] Install');
-    e.waitUntil((async () => {
-    //   console.log('[Service Worker] Caching all: app shell and content');
-        //required by PWA  
-       const cache = await caches.open(cacheName);
-       
-       const response = await fetch('index.html');
+// 使用cache功能
+// 存任何的.js
+workbox.routing.registerRoute(
+  new RegExp('.*\.js'),
+  workbox.strategies.cacheFirst()
+);
 
-       // url without index.html
-      // cache.put(response.url,response.clone());
-       cache.put(response.url.replace('index.html',''),response);
-    })());
-});
+// 存任何的css
+workbox.routing.registerRoute(
+  new RegExp('.*\.css'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'css-cache'
+  })
+);
 
-self.addEventListener('fetch', (e) => {
-    e.respondWith((async () => {
-      const r = await caches.match(e.request);
-    //   console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
-      if (r) { return r; }
-      const response = await fetch(e.request);
-      const cache = await caches.open(cacheName);
-    //   console.log(`[Service Worker] Caching new resource: ${e.request.url}`);
-      cache.put(e.request, response.clone());
-      
-      return response;
-    })());
-  });
+// 存任何的images
+workbox.routing.registerRoute(
+  new RegExp('icons/*\.(?:png|jpg|jpeg|svg|gif)'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'image-cache'
+  })
+);
+
+// ==============
+
+// 使用precache功能，在offline下也可以執行
+// 要存進cache storage裡的檔案清單
+var cacheFiles = [
+    // "assets/bootstrap.bundle.min.js",
+    // "assets/bootstrap.min.css",
+    // "assets/bootstrap.min.js",
+    // "assets/jquery-3.3.1.slim.min.js",
+    // "assets/test.jpg",
+    {
+      url: './index.html',
+      revision: '00000001' // 加revision，版本改了以後，sw.js 在 application 上會更新
+    }
+  ];
+  workbox.precaching.precacheAndRoute(cacheFiles);

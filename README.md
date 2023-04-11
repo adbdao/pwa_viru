@@ -5,5 +5,7 @@
   1. Android自動安裝成APP  
   2. iPhone請使用「加到主頁面」  
   
+>### 來源檔案 https://virucana.blogspot.com/2023/02/blog-post.html  
+---
 > 最新資訊 http://adbdao.blogspot.com/2018/07/blog-post.html  
 ---  

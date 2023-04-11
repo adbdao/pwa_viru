@@ -37,8 +37,11 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
     <META content="text/html; charset=utf-8" http-equiv=Content-Type>
     
     <link rel="icon" href="icons/virucana48.png" />
-    <link rel="manifest" href="manifest.json" />
+    <!-- <link rel="manifest" href="manifest.json" /> -->
 
+    <link rel="canonical" href="https://adbdao.github.io/pwa_viru/" />
+    <link rel="manifest" href="/pwa_viru/manifest.json">
+    
     <SCRIPT language=Javascript>
         // <!--我修改-->
         /*****************************************************************************
@@ -711,7 +714,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             myObj1 = oT5.value
             // 怕當機，所以先設輸入條件
             if (/\D/.test(myObj1.charAt(0))) {
-                alert('請輸入數字日期  ' + myObj1.charAt(0) + ' 是錯誤格式')
+                // alert('請輸入數字日期  ' + myObj1.charAt(0) + ' 是錯誤格式')
             } else {
                 var myArr = oT5.value.replace(/[^\n\d]/g, 'A').split('\n')
                 var myArr1 = []
@@ -721,7 +724,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                     myArr1[i] = []
                     myArr1[i] = myArr[i].split('A')
                     if (myArr1[i].length < 3) {
-                        alert(myArr1[i] + '  輸入格式不正確  請重新檢查')
+                        // alert(myArr1[i] + '  輸入格式不正確  請重新檢查')
                         continue
                     }
                     // 日期導入函數轉換
@@ -1830,13 +1833,16 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             var savedPrompt
 
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw_my.js')
+                navigator.serviceWorker.register(
+                    '/pwa_viru/sw_my.js',
+                    { scope: '/pwa_viru/' }
+                )
                     .then(function (registration) {
                         console.log('ServiceWorker registration successful with scope:', registration.scope)
-                        alert('安裝成功')
+                        // alert('安裝成功')
                     }).catch(function (err) {
                         console.log('ServiceWorker registration failed:', err)
-                        alert('安裝失敗，請重新安裝')
+                        // alert('安裝失敗，請重新安裝')
                     })
             }
 
@@ -1854,10 +1860,10 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                     savedPrompt.userChoice.then(function (result) {
 
                         if (result.outcome == 'dismissed') {
-                              alert('使用者關閉主營幕')
+                              // alert('使用者關閉主營幕')
                             console.log('User dismissed homescreen install')
                         } else {
-                            alert('使用者加入主營幕')
+                            // alert('使用者加入主營幕')
                             console.log('User added to homescreen')
                         }
                         savedPrompt = null
