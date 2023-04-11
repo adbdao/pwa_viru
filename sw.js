@@ -4,13 +4,13 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 // 使用cache功能
 // 存任何的.js
 workbox.routing.registerRoute(
-  new RegExp('.*\.js'),
+  new RegExp('/pwa_viru/*\.js'),
   workbox.strategies.cacheFirst()
 );
 
 // 存任何的css
 workbox.routing.registerRoute(
-  new RegExp('.*\.css'),
+  new RegExp('/pwa_viru/*\.css'),
   workbox.strategies.cacheFirst({
     cacheName: 'css-cache'
   })
@@ -18,7 +18,7 @@ workbox.routing.registerRoute(
 
 // 存任何的images
 workbox.routing.registerRoute(
-  new RegExp('icons/*\.(?:png|jpg|jpeg|svg|gif)'),
+  new RegExp('/pwa_viru/icons/*\.(?:png|jpg|jpeg|svg|gif)'),
   workbox.strategies.cacheFirst({
     cacheName: 'image-cache'
   })
@@ -35,8 +35,8 @@ var cacheFiles = [
     // "assets/jquery-3.3.1.slim.min.js",
     // "assets/test.jpg",
     {
-      url: './index.html',
-      revision: '00000003' // 加revision，版本改了以後，sw.js 在 application 上會更新
+      url: '/pwa_viru/index.html',
+      revision: '00000004' // 加revision，版本改了以後，sw.js 在 application 上會更新
     }
   ];
   workbox.precaching.precacheAndRoute(cacheFiles);
