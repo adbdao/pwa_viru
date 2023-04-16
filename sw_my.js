@@ -43,19 +43,20 @@
 // })
 // ========================
 
-const cacheName = 'helloWorld';
+const cacheName = 'pwa_viru';
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(cacheName)
       .then(cache => cache.addAll([
-        'index.html',
-        'sw_my.js',
-        'manifest.json',
-        'icons/virucana48.png',
-        'icons/virucana144.png',
-        'icons/virucana192.png',
-        'icons/virucana512.png'
+        '/pwa_viru/index.html',
+        '/pwa_viru/sw_my.js',
+        '/pwa_viru/sw.js',
+        '/pwa_viru/manifest.json',
+        '/pwa_viru/icons/virucana48.png',
+        '/pwa_viru/icons/virucana144.png',
+        '/pwa_viru/icons/virucana192.png',
+        '/pwa_viru/icons/virucana512.png'
       ]))
   )
 })

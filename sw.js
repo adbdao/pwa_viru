@@ -4,13 +4,23 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
 // 使用cache功能
 // 存任何的.js
 workbox.routing.registerRoute(
-  new RegExp('/pwa_viru/*\.js'),
-  workbox.strategies.cacheFirst()
+  new RegExp('*\.js'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'js-cache'
+  })
+);
+
+// 存任何的html
+workbox.routing.registerRoute(
+  new RegExp('*\.html'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'html-cache'
+  })
 );
 
 // 存任何的css
 workbox.routing.registerRoute(
-  new RegExp('/pwa_viru/*\.css'),
+  new RegExp('*\.css'),
   workbox.strategies.cacheFirst({
     cacheName: 'css-cache'
   })
@@ -18,11 +28,44 @@ workbox.routing.registerRoute(
 
 // 存任何的images
 workbox.routing.registerRoute(
-  new RegExp('/pwa_viru/icons/*\.(?:png|jpg|jpeg|svg|gif)'),
+  new RegExp('icons/*\.(?:png|jpg|jpeg|svg|gif)'),
   workbox.strategies.cacheFirst({
     cacheName: 'image-cache'
   })
 );
+// 不知道Github路徑，只好全部加入
+// 存任何的.js
+workbox.routing.registerRoute(
+  new RegExp('/pwa_viru/*\.js'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'js-cache-github'
+  })
+);
+
+// 存任何的html
+workbox.routing.registerRoute(
+  new RegExp('/pwa_viru/*\.html'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'html-cache-github'
+  })
+);
+
+// 存任何的css
+workbox.routing.registerRoute(
+  new RegExp('/pwa_viru/*\.css'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'css-cache-github'
+  })
+);
+
+// 存任何的images
+workbox.routing.registerRoute(
+  new RegExp('/pwa_viru/icons/*\.(?:png|jpg|jpeg|svg|gif)'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'image-cache-github'
+  })
+);
+
 
 // ==============
 
@@ -36,7 +79,7 @@ var cacheFiles = [
     // "assets/test.jpg",
     {
       url: '/pwa_viru/index.html',
-      revision: '00000004' // 加revision，版本改了以後，sw.js 在 application 上會更新
+      revision: '00000001' // 加revision，版本改了以後，sw.js 在 application 上會更新
     }
   ];
   workbox.precaching.precacheAndRoute(cacheFiles);
