@@ -49,25 +49,44 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(cacheName)
       .then(cache => cache.addAll([
+        //   只要有一個載入失敗，就全部失敗，所以盡量少
         '/pwa_viru/index.html',
-        '/pwa_viru/sw_my.js',
-        '/pwa_viru/sw.js',
-        '/pwa_viru/manifest.json',
-        '/pwa_viru/icons/virucana48.png',
-        '/pwa_viru/icons/virucana144.png',
-        '/pwa_viru/icons/virucana192.png',
-        '/pwa_viru/icons/virucana512.png'
+        '/pwa_viru/sw_my.js'
+        // '/pwa_viru/sw.js',
+        // '/pwa_viru/manifest.json',
+        // '/pwa_viru/icons/virucana48.png',
+        // '/pwa_viru/icons/virucana144.png',
+        // '/pwa_viru/icons/virucana192.png',
+        // '/pwa_viru/icons/virucana512.png'
       ]))
   )
 })
 
 self.addEventListener('fetch', function (event) {
   event.respondWith(
-    caches.match(event.request)
+    caches.match(event.request, { ignoreSearch: true })
       .then(function (response) {
         if (response) {
           return response
         }
-        return fetch(event.request)
-      }))
+
+        var requestToCache = event.request.clone()
+
+        return fetch(requestToCache).then(
+          function (response) {
+            if (!response || response.status !== 200) {
+              return response
+            }
+
+            var requestToCache = response.clone()
+
+            cache.open(cacheName)
+              .then(function (cache) {
+                cache.put(requestToCache, requestToCache)
+              })
+            return response
+          }
+        )
+      })
+  )
 });
