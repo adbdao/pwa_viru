@@ -1,4 +1,4 @@
-const cacheName = 'cache';
+const cacheName = 'virucana';
 
 self.addEventListener('install', (e) => {
     console.log('[Service Worker] Install');
