@@ -1,6 +1,4 @@
-<!DOCTYPE HTML>
-
-<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <!-- saved from url=(0048)http://s.o4u.com/host/blog/calendar/calendar.htm -->
 <!--
         ***************************************
@@ -30,8 +28,8 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
 
 <HEAD>
     <TITLE>毘盧佛月曆</TITLE>
-    <META name=keywords
-        content="農曆國曆對照表,時間;世界時間;時區;農曆;陰曆;陽曆;月曆;曆法;節日;紀念日;時區;節氣;二十四節氣;干支;生肖;world time clock;gregorian solar;Chinese lunar;calendar">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <META name=keywords content="農曆國曆對照表,時間;世界時間;時區;農曆;陰曆;陽曆;月曆;曆法;節日;紀念日;時區;節氣;二十四節氣;干支;生肖;world time clock;gregorian solar;Chinese lunar;calendar">
     <META name=robots content=All>
     <META name=description content="農曆國曆對照表,Gregorian Solar Calendar and Chinese Lunar Calendar">
     <META content="text/html; charset=utf-8" http-equiv=Content-Type>
@@ -714,7 +712,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             myObj1 = oT5.value
             // 怕當機，所以先設輸入條件
             if (/\D/.test(myObj1.charAt(0))) {
-                // alert('請輸入數字日期  ' + myObj1.charAt(0) + ' 是錯誤格式')
+                alert('請輸入數字日期  ' + myObj1.charAt(0) + ' 是錯誤格式')
             } else {
                 var myArr = oT5.value.replace(/[^\n\d]/g, 'A').split('\n')
                 var myArr1 = []
@@ -724,7 +722,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                     myArr1[i] = []
                     myArr1[i] = myArr[i].split('A')
                     if (myArr1[i].length < 3) {
-                        // alert(myArr1[i] + '  輸入格式不正確  請重新檢查')
+                        alert(myArr1[i] + '  輸入格式不正確  請重新檢查')
                         continue
                     }
                     // 日期導入函數轉換
@@ -1036,8 +1034,8 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                     else //顯示農曆日
                         lObj.innerHTML = cDay(mylD);
                     // 顯示初一十五
-                    if (mylD == 1) { lObj.innerHTML += '<font' + ' ' + 'style="font-size:24pt;background:#adf;color:royalblue;">午供</font>'; }
-                    if (mylD == 15) { lObj.innerHTML += '<font' + ' ' + 'style="font-size:24pt;background:#adf;color:royalblue;">午供</font>'; }
+                    if (mylD == 1) { lObj.innerHTML += '<font' + ' ' + 'style="font-size:12pt;background:#adf;color:royalblue;">午供</font>'; }
+                    if (mylD == 15) { lObj.innerHTML += '<font' + ' ' + 'style="font-size:12pt;background:#adf;color:royalblue;">午供</font>'; }
                     // 顯示六齋日
                     myBr = givecolor('六齋', 'green', 'orange', '<br/>').big()
                     myBr1 = givecolor('六齋', 'green', 'orange', '<br/>').big() + givebrcolor('誦戒', 'magenta').big()
@@ -1174,13 +1172,13 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                     festival = '';
                 else
                     festival = '<TABLE WIDTH=100% BORDER=0 CELLPADDING=2 CELLSPACING=0 BGCOLOR="#CCFFCC"><TR><TD>' +
-                        '<FONT COLOR="#000000" STYLE="font-size:18pt;">' + cld[d].lunarFestival + ' ' + cld[d].solarFestival + ' ' + cld[d].solarTerms + ' ' + spcday + '</FONT></TD>' +
+                        '<FONT COLOR="#000000" STYLE="font-size:9pt;">' + cld[d].lunarFestival + ' ' + cld[d].solarFestival + ' ' + cld[d].solarTerms + ' ' + spcday + '</FONT></TD>' +
                         '</TR></TABLE>';
 
 
 
                 s = '<TABLE WIDTH="130" BORDER=0 CELLPADDING="2" CELLSPACING=0 BGCOLOR="#000066" style="opacity:0.8; -moz-opacity:0.8; filter:Alpha(opacity=80)"><TR><TD>' +
-                    '<TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD ALIGN="right"><FONT COLOR="#ffffff" STYLE="font-size:18pt;">' +
+                    '<TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=0><TR><TD ALIGN="right"><FONT COLOR="#ffffff" STYLE="font-size:9pt;">' +
                     cld[d].sYear + ' 年 ' + cld[d].sMonth + ' 月 ' + cld[d].sDay + ' 日<br/>星期' + cld[d].week + '<br/>' +
                     '<font color="violet">農曆' + (cld[d].isLeap ? '閏 ' : ' ') + cld[d].lMonth + ' 月 ' + cld[d].lDay + ' 日</font><br/>' +
                     '<font color="yellow">' + cld[d].cYear + '年 ' + cld[d].cMonth + '月 ' + cld[d].cDay + '日</font>' +
@@ -1409,7 +1407,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             getGlobeTime();
 
             //地圖位移
-            document.getElementById("City").innerHTML = (isDS == true ? "<SPAN STYLE='font-size:24pt;font-family:Wingdings; color:Red;'><font face='Wingdings'>R</font></span> " : '') + objTimeZone[2]; //首都
+            document.getElementById("City").innerHTML = (isDS == true ? "<SPAN STYLE='font-size:12pt;font-family:Wingdings; color:Red;'><font face='Wingdings'>R</font></span> " : '') + objTimeZone[2]; //首都
             var pos = Math.floor(objTimeZone[0].substr(0, 3));
             if (pos < 0) pos += 24;
             pos *= -10;
@@ -1505,7 +1503,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
 
         html {
             background: olive;
-            font-size:2em
+            /* font-size:2em */
         }
 
         .todayColor {
@@ -1521,23 +1519,23 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
         }
 
         .font-blue {
-            font-size: 32px;
+            font-size: 16px;
             color: #0000FF;
         }
 
         button {
-            FONT-SIZE: 16pt;
+            FONT-SIZE: 8pt;
         }
 
         #GX {
-            font-size:20pt;
+            font-size: 10pt;
             color: #fff;
             font-weight: bold;
         }
 
         #showCalendar,
         #jt {
-            font-size: 24pt;
+            font-size: 12pt;
             background: #adf;
             color: #030;
         }
@@ -1625,8 +1623,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
         }
     </SCRIPT>
 
-    <DIV style="Z-INDEX: 3; POSITION: absolute; FILTER: shadow(color=#333333,direction=135); WIDTH: 140px; HEIGHT: 120px"
-        id=detail></DIV>
+    <DIV style="Z-INDEX: 3; POSITION: absolute; FILTER: shadow(color=#333333,direction=135); WIDTH: 140px; HEIGHT: 120px" id=detail></DIV>
     <FORM onsubmit="return false;" name=CLD>
         <!--為了手機版浮動視窗會出現在左上角，會遮按鈕，所以讓按鈕靠右-->
         <!--背景英文月份<TABLE border=0>
@@ -1646,15 +1643,15 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             </tr>
             <TR>
                 <TD bgColor=orange colSpan=7 align=right>
-                    <FONT style="font-size:20pt" color=#000 size=2>
+                    <FONT style="font-size:10pt" color=#000 size=2>
                         西元
-                        <SELECT style="font-size:18pt" onchange=changeCld() name=SY>
+                        <SELECT style="font-size:9pt" onchange=changeCld() name=SY>
                             <SCRIPT language=Javascript>
                                 // <!--我修改
                                 for (i = 1900; i < 2101; i++) document.write('<option>' + i)
           //--></SCRIPT>
                         </SELECT>年
-                        <SELECT style="font-size:18pt" onchange=changeCld() name=SM>
+                        <SELECT style="font-size:9pt" onchange=changeCld() name=SM>
                             <SCRIPT language=JavaScript>
                                 // <!--我修改
                                 for (i = 1; i < 13; i++) document.write('<option>' + i)
@@ -1675,27 +1672,27 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
         </td>
       </tr>
 -->
-            <tr colSpan=7 align=middle style="width: calc(100% / 7);" bgcolor="#ff8">
-                <td style="font-size:18pt">滑鼠<br />點擊→</td>
-                <td style="font-size:18pt" onmousedown="pushBtm('YU')">上一年▲</td>
-                <td style="font-size:18pt" onmousedown="pushBtm('YD')">下一年▼</td>
-                <td style="font-size:18pt" onmousedown="pushBtm('MU')">上一月▲</td>
-                <td style="font-size:18pt" onmousedown="pushBtm('MD')">下一月▼</td>
-                <td style="font-size:18pt" onmousedown="pushBtm('')">回今日</td>
-                <td style="font-size:18pt" onmousedown="javascript:window.location.reload()">重新載入</td>
+            <tr colSpan=7 align=middle width=40 bgcolor="#ff8">
+                <td style="font-size:9pt">滑鼠<br />點擊→</td>
+                <td style="font-size:9pt" onmousedown="pushBtm('YU')">上一年▲</td>
+                <td style="font-size:9pt" onmousedown="pushBtm('YD')">下一年▼</td>
+                <td style="font-size:9pt" onmousedown="pushBtm('MU')">上一月▲</td>
+                <td style="font-size:9pt" onmousedown="pushBtm('MD')">下一月▼</td>
+                <td style="font-size:9pt" onmousedown="pushBtm('')">回今日</td>
+                <td style="font-size:9pt" onmousedown="javascript:window.location.reload()">重新載入</td>
             </tr>
             <TR>
                 <TD id="mySD" align=middle bgColor='gold' colSpan=7></TD>
             </TR>
 
             <TR align=middle bgColor=#e0e0e0>
-                <TD style="width: calc(100% / 7);" >日</TD>
-                <TD style="width: calc(100% / 7);" >一</TD>
-                <TD style="width: calc(100% / 7);" >二</TD>
-                <TD style="width: calc(100% / 7);" >三</TD>
-                <TD style="width: calc(100% / 7);" >四</TD>
-                <TD style="width: calc(100% / 7);" >五</TD>
-                <TD style="width: calc(100% / 7);" >六</TD>
+                <TD width=99>日</TD>
+                <TD width=99>一</TD>
+                <TD width=99>二</TD>
+                <TD width=99>三</TD>
+                <TD width=99>四</TD>
+                <TD width=99>五</TD>
+                <TD width=99>六</TD>
             </TR>
             <SCRIPT language=JavaScript>
                 // <!--我修改
@@ -1731,7 +1728,7 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
                             if (i % 2 == 1) document.write(' color=' + color2)
                             else document.write(' color=' + color1)
                         }
-                        document.write(' TITLE=""> </font><br/><font id="LD' + gNum + '" size=2 style="font-size:18pt"> </font></td>')
+                        document.write(' TITLE=""> </font><br/><font id="LD' + gNum + '" size=2 style="font-size:9pt"> </font></td>')
                     }
                     document.write('</tr>')
                 }
@@ -1746,12 +1743,12 @@ Open Source 不代表放棄著作權，任何形式之引用或轉載前請來�
             <FORM name=WorldClock>
                 <TD vAlign=top width=240 align=left>
                     <!--為了手機版靠左-->
-                    <FONT style="font-size:18pt" size=2>本地時間</FONT><br />
-                    <SPAN style="FONT-FAMILY: Arial; COLOR: #000080; font-size:22pt" id=LocalTime>0000年0月0日 (　) 　午
+                    <FONT style="font-size:9pt" size=2>本地時間</FONT><br />
+                    <SPAN style="FONT-FAMILY: Arial; COLOR: #000080; font-size:11pt" id=LocalTime>0000年0月0日 (　) 　午
                         00:00:00</SPAN>
                     <P>
-                        <SPAN style="WIDTH: 150px; FONT-FAMILY: '新細明體'; font-size:18pt" id=City>台灣</SPAN> <br />
-                        <SPAN style="FONT-FAMILY: Arial; COLOR: #000080; font-size:22pt" id=GlobeTime>0000年0月0日 (　) 　午
+                        <SPAN style="WIDTH: 150px; FONT-FAMILY: '新細明體'; font-size:9pt" id=City>台灣</SPAN> <br />
+                        <SPAN style="FONT-FAMILY: Arial; COLOR: #000080; font-size:11pt" id=GlobeTime>0000年0月0日 (　) 　午
                             00:00:00</SPAN><br />
 
                     <TABLE>
